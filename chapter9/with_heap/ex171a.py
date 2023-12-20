@@ -23,6 +23,7 @@ def dijkstra(graph, node):
 
     while queue:
         current_cost, current_node = heapq.heappop(queue)
+        logger.debug(f"node {current_node} with cost {current_cost} popped from pqueue")
 
         for next_node, weight in graph[current_node].items():
             new_cost = current_cost + weight
@@ -30,12 +31,15 @@ def dijkstra(graph, node):
                 costs[next_node] = new_cost
                 parents[next_node] = current_node
                 heapq.heappush(queue, (new_cost, next_node))
+                logger.debug(
+                    f"node {next_node} with new cost {new_cost} appended to pqueue"
+                )
     return costs, parents
 
 
 costs, parents = dijkstra(graph, "start")
 
-print(f"lowest cost route: {costs['fin']}")
+print(f"lowest cost from start to fin: {costs['fin']}")
 
 
 def get_full_route():
@@ -48,4 +52,4 @@ def get_full_route():
     return list(reversed(route))
 
 
-print(f"route: {get_full_route()}")
+print(f"full route: {get_full_route()}")
