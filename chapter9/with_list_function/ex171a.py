@@ -4,30 +4,30 @@ import math
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-graph = {}
-graph["start"] = {}
-graph["start"]["a"] = 10
-graph["a"] = {}
-graph["a"]["c"] = 20
-graph["b"] = {}
-graph["b"]["a"] = 1
-graph["b"]["c"] = 1
-graph["c"] = {}
-graph["c"]["b"] = 1
-graph["c"]["fin"] = 30
-graph["fin"] = {}
+graph = {
+    "start": {"a": 5, "b": 2},
+    "a": {"b": 8, "c": 4, "d": 2},
+    "b": {"a": 8, "d": 7},
+    "c": {"d": 6, "fin": 3},
+    "d": {"fin": 1},
+    "fin": {},
+}
 
-costs = {}
-costs["a"] = 10
-costs["b"] = math.inf
-costs["c"] = math.inf
-costs["fin"] = math.inf
+costs = {
+    "a": 5,
+    "b": 2,
+    "c": math.inf,
+    "d": math.inf,
+    "fin": math.inf,
+}
 
-parents = {}
-parents["a"] = "start"
-parents["b"] = None
-parents["c"] = None
-parents["fin"] = None
+parents = {
+    "a": "start",
+    "b": "start",
+    "c": None,
+    "d": None,
+    "fin": None,
+}
 
 processed = set()
 
@@ -56,3 +56,16 @@ while node is not None:
     node = find_lowest_cost_node(costs)
 
 print(f"lowest cost route: {costs['fin']}")
+
+
+def get_full_route():
+    route = []
+    next = "fin"
+    while next != "start":
+        route.append(next)
+        next = parents[next]
+    route.append("start")
+    return list(reversed(route))
+
+
+print(f"route: {get_full_route()}")

@@ -4,31 +4,27 @@ import math
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-graph = {}
-graph["start"] = {}
-graph["start"]["a"] = 2
-graph["start"]["b"] = 2
-graph["a"] = {}
-graph["a"]["b"] = 2
-graph["b"] = {}
-graph["b"]["c"] = 2
-graph["b"]["fin"] = 2
-graph["c"] = {}
-graph["c"]["fin"] = 2
-graph["fin"] = {}
+graph = {
+    "start": {"a": 10},
+    "a": {"c": 20},
+    "b": {"a": 1, "c": 1},
+    "c": {"b": 1, "fin": 30},
+    "fin": {},
+}
 
+costs = {
+    "a": 10,
+    "b": math.inf,
+    "c": math.inf,
+    "fin": math.inf,
+}
 
-costs = {}
-costs["a"] = 2
-costs["b"] = 2
-costs["c"] = math.inf
-costs["fin"] = math.inf
-
-parents = {}
-parents["a"] = "start"
-parents["b"] = "start"
-parents["c"] = None
-parents["fin"] = None
+parents = {
+    "a": "start",
+    "b": None,
+    "c": None,
+    "fin": None,
+}
 
 processed = set()
 
