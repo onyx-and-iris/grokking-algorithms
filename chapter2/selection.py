@@ -16,15 +16,15 @@ artists = [
 
 
 def selectionSort(array, size):
-    for ind in range(size):
-        min_index = ind
+    for index in range(size):
+        min_index = index
 
-        for j in range(ind + 1, size):
+        for j in range(index + 1, size):
             # select the minimum element in every iteration
             if array[j].count < array[min_index].count:
                 min_index = j
         # swapping the elements to sort the array
-        (array[ind], array[min_index]) = (array[min_index], array[ind])
+        (array[index], array[min_index]) = (array[min_index], array[index])
 
 
 selectionSort(artists, len(artists))
