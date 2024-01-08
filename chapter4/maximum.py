@@ -1,8 +1,5 @@
 import logging
-import math
 import random
-
-highest = math.inf
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
