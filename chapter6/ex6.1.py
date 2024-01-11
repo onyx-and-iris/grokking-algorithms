@@ -21,6 +21,8 @@ graph = {
     "f": [],
 }
 
+visited = []
+
 
 def bfs():
     queue = deque()
@@ -31,6 +33,10 @@ def bfs():
         current_node = queue.popleft()
         if current_node.name == "f":
             return current_node.distance
+
+        if current_node.name in visited:
+            continue
+        visited.append(current_node.name)
 
         next_nodes = graph[current_node.name]
         for node in next_nodes:
