@@ -21,7 +21,7 @@ graph = {
     "bat": [],
 }
 
-visited = []
+visited = set()
 
 
 def bfs():
@@ -36,7 +36,7 @@ def bfs():
 
         if current_node.name in visited:
             continue
-        visited.append(current_node.name)
+        visited.add(current_node.name)
 
         next_nodes = graph[current_node.name]
         for node in next_nodes:
