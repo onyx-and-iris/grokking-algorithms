@@ -5,23 +5,27 @@ from pathlib import Path
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+EXT = ".rb"
+
 scripts_path = Path.home() / "scripts"
 
 
-def files_with_extension(ext):
+def files_with_extension(start_directory):
     queue = deque()
-    queue += scripts_path.glob("*")
+    queue.append(start_directory)
 
     while queue:
-        item = queue.popleft()
+        items = queue.popleft()
 
-        # if it is a file and has extension ext then print
-        if item.is_file() and item.suffix == ext:
-            print(item)
+        for item in items.glob("*"):
+            # if it is a file and has extension EXT then print
+            if item.is_file():
+                if item.suffix == EXT:
+                    print(item)
 
-        # otherwise add directory items to the queue
-        else:
-            queue += item.glob("*")
+            # otherwise append directory to the queue
+            else:
+                queue.append(item)
 
 
-files_with_extension(".sh")
+files_with_extension(scripts_path)
