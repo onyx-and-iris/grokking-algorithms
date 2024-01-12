@@ -18,7 +18,7 @@ def files_with_extension(start_directory):
         items = queue.popleft()
 
         for item in items.glob("*"):
-            # if it is a file and has extension EXT then print
+            # if item is a file and has extension EXT then print
             if item.is_file():
                 if item.suffix == EXT:
                     print(item)

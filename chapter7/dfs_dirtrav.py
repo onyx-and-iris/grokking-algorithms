@@ -12,7 +12,7 @@ scripts_path = Path.home() / "scripts"
 
 def files_with_extension(directory):
     for item in directory.glob("*"):
-        # if it is a file and has extension EXT then print
+        # if item is a file and has extension EXT then print
         if item.is_file():
             if item.suffix == EXT:
                 print(item)
