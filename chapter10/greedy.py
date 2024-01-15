@@ -12,16 +12,16 @@ stations = {
 }
 
 
-def greedy():
-    def fget():
-        needed = set()
-        for states in stations.values():
-            needed |= states
-        return needed
+def fget():
+    needed = set()
+    for states in stations.values():
+        needed |= states
+    return needed
 
+
+def greedy():
     states_needed = fget()
     logger.debug(states_needed)
-
     final_stations = set()
 
     while states_needed:
