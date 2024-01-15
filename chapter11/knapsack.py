@@ -48,11 +48,26 @@ def format_and_print(table):
     table[0][0] = None
 
     # print tabularised 2D array
+    logger.info([item.name for item in items])
     logger.info(tabulate(table, tablefmt="pretty"))
 
 
+# Where items = Guitar + Stereo + Laptop
 items = [Item("Guitar", 1500, 1), Item("Stereo", 3000, 4), Item("Laptop", 2000, 3)]
 W = 4
 greatest_value = dynamic(items, len(items))
 
-print(greatest_value)
+print(f"Greatest value: {greatest_value}")
+
+
+# Where items = Guitar + Stereo + Laptop + Iphone
+items = [
+    Item("Guitar", 1500, 1),
+    Item("Stereo", 3000, 4),
+    Item("Laptop", 2000, 3),
+    Item("Iphone", 2000, 1),
+]
+W = 4
+greatest_value_with_iphone = dynamic(items, len(items))
+
+print(f"Greatest value: {greatest_value_with_iphone}")
