@@ -18,7 +18,7 @@ class Item:
     weight: int
 
 
-def dynamic(W, items, n):
+def dynamic(items, n):
     # create table and zero fill it (required for calculations)
     table = [[0 for _ in range(W + 1)] for _ in range(n + 1)]
 
@@ -53,6 +53,6 @@ def format_and_print(table):
 
 items = [Item("Guitar", 1500, 1), Item("Stereo", 3000, 4), Item("Laptop", 2000, 3)]
 W = 4
-greatest_value = dynamic(W, items, len(items))
+greatest_value = dynamic(items, len(items))
 
 print(greatest_value)
