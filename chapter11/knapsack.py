@@ -22,7 +22,7 @@ def dynamic(items, n):
     # create table and zero fill it (required for calculations)
     table = [[0 for _ in range(W + 1)] for _ in range(n + 1)]
 
-    # calcalate all possible max values for items in knapsack
+    # calculate all possible max values for items in knapsack
     for i in range(1, n + 1):
         for w in range(1, W + 1):
             if items[i - 1].weight <= w:
