@@ -5,7 +5,7 @@ from tabulate import tabulate
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s %(levelname)s\n\r%(message)s",
-    datefmt="%H:%len_x:%S",
+    datefmt="%H:%M:%S",
 )
 logger = logging.getLogger(__name__)
 
