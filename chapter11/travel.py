@@ -44,8 +44,7 @@ def format_and_print(table):
         if i == 0:
             continue
         row[0] = locations[i - 1].name
-    table[0] = [i / 2 for i in range(2 * (W + 1) - 1)]
-    table[0][0] = None
+    table[0] = [None, *[i / 2 for i in range(1, 2 * (W + 1) - 1)]]
 
     # print tabularised 2D array
     logger.info([item.name for item in locations])

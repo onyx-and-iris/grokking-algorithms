@@ -44,8 +44,7 @@ def format_and_print(table):
         if i == 0:
             continue
         row[0] = items[i - 1].name
-    table[0] = [i for i in range(W + 1)]
-    table[0][0] = None
+    table[0] = [None, *[i for i in range(1, W + 1)]]
 
     # print tabularised 2D array
     logger.info([item.name for item in items])
