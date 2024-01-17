@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 tabulate = "*"
+numpy = "*"
 
 [dev-packages]
 
