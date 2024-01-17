@@ -37,12 +37,12 @@ def knn(point: Point, neighbours):
 
 
 neighbours = [
-    Point("A", 5, True, False, 300),  # A
-    Point("B", 3, True, True, 225),  # B
-    Point("C", 1, True, False, 75),  # C
-    Point("D", 4, False, True, 200),  # D
-    Point("E", 4, False, False, 150),  # E
-    Point("F", 2, False, False, 50),  # F
+    Point("A", 5, True, False, 300),
+    Point("B", 3, True, True, 225),
+    Point("C", 1, True, False, 75),
+    Point("D", 4, False, True, 200),
+    Point("E", 4, False, False, 150),
+    Point("F", 2, False, False, 50),
 ]
 
 point = Point("T", 4, True, False)
