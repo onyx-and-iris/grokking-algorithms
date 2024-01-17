@@ -30,10 +30,10 @@ def knn(point: Point, neighbours):
         neighbour.distance = np.linalg.norm(point.array - neighbour.array)
         logger.debug(f"{neighbour.identifier}: {neighbour.distance}")
 
-    average = 0
+    total = 0
     for n in sorted(neighbours, key=lambda x: x.distance)[:K]:
-        average += n.sold
-    return average / K
+        total += n.sold
+    return total / K
 
 
 neighbours = [
