@@ -42,13 +42,13 @@ X = "fosh"
 Y = "fort"
 
 logger.info(f"words: {X} {Y}")
-longest_substring = longest_common_subsequence(X, Y, len(X), len(Y))
-print(f"Longest common subsequence: {longest_substring}")
+longest_subsequence = longest_common_subsequence(X, Y, len(X), len(Y))
+print(f"Longest common subsequence: {longest_subsequence}")
 
 
 X = "fosh"
 Y = "fish"
 
 logger.info(f"words: {X} {Y}")
-longest_substring = longest_common_subsequence(X, Y, len(X), len(Y))
-print(f"Longest common subsequence: {longest_substring}")
+longest_subsequence = longest_common_subsequence(X, Y, len(X), len(Y))
+print(f"Longest common subsequence: {longest_subsequence}")
