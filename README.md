@@ -18,7 +18,7 @@
 
 ### Breadth-First Search
 
-[chapter6][quick_sort]
+[chapter6][bfs]
 
 ### Trees
 
