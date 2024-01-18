@@ -47,10 +47,10 @@ K = 4
 
 k_nearest = knn(point, neighbours)
 
-average_sold = 0
+total = 0
 for n in k_nearest:
-    average_sold += n.sold
-average_sold = average_sold / K
+    total += n.sold
+average = total / K
 
-logger.debug(average_sold)
-print(f"Number of loaves to make: {int(round(average_sold, 0))}")
+logger.debug(average)
+print(f"Number of loaves to make: {int(round(average, 0))}")

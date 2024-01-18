@@ -45,13 +45,13 @@ X = "fish"
 Y = "vish"
 
 logger.info(f"words: {X} {Y}")
-longest_substring = longest_common_substring(X, Y, len(X), len(Y))
-print(f"Longest common substring: {longest_substring}")
+length = longest_common_substring(X, Y, len(X), len(Y))
+print(f"Longest common substring: {length}")
 
 
 X = "vista"
 Y = "hish"
 
 logger.info(f"words: {X} {Y}")
-longest_substring = longest_common_substring(X, Y, len(X), len(Y))
-print(f"Longest common substring: {longest_substring}")
+length = longest_common_substring(X, Y, len(X), len(Y))
+print(f"Longest common substring: {length}")
