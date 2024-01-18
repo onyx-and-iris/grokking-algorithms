@@ -1,6 +1,5 @@
 import logging
 import random
-import time
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -31,7 +30,6 @@ SAMPLE_SIZE = 1000
 numbers = random.sample(range(LOWER, UPPER), SAMPLE_SIZE)
 numbers.sort()
 
-start = time.time()
 result = None
 while result is None:
     guess = random.randrange(LOWER, UPPER)
@@ -39,4 +37,4 @@ while result is None:
     result = binary_search(numbers, guess)
 
 
-print(f"Found {guess} at index {result}. Running time {time.time() - start}")
+print(f"Found {guess} at index {result}.")
