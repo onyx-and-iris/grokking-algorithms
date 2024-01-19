@@ -1,6 +1,5 @@
 import logging
 import random
-import time
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
