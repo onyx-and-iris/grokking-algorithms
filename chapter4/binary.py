@@ -33,11 +33,10 @@ SAMPLE_SIZE = 1000
 numbers = random.sample(range(LOWER, UPPER), SAMPLE_SIZE)
 numbers.sort()
 
-start = time.time()
 result = None
 while result is None:
     guess = random.randrange(LOWER, UPPER)
     logger.debug(f"guess: {guess}")
     result = binary_search(numbers, 0, len(numbers) - 1, guess)
 
-print(f"Found {guess} at index {result}. Running time {time.time() - start}")
+print(f"Found {guess} at index {result}.")
