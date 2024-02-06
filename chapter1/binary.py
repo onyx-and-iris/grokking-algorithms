@@ -30,11 +30,14 @@ SAMPLE_SIZE = 1000
 numbers = random.sample(range(LOWER, UPPER), SAMPLE_SIZE)
 numbers.sort()
 
+seen = set()
+count = 0
 result = None
-while result is None:
+while not result:
     guess = random.randrange(LOWER, UPPER)
-    logger.debug(f"guess: {guess}")
-    result = binary_search(numbers, guess)
+    if guess not in seen:
+        count += 1
+        seen.add(guess)
+        result = binary_search(numbers, guess)
 
-
-print(f"Found {guess} at index {result}.")
+print(f"Found {guess} at index {result} after {count} attempts")

@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 
 words_alpha.txt
+
+tests/
