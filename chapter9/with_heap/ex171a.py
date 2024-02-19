@@ -20,10 +20,15 @@ def dijkstra(graph, node):
     costs[node] = 0
     parents = {node: None for node in graph}
     queue = [(0, node)]
+    visited = set()
 
     while queue:
         current_cost, current_node = heapq.heappop(queue)
+        if current_node in visited:
+            continue
+
         logger.debug(f"node {current_node} with cost {current_cost} popped from pqueue")
+        visited.add(current_node)
 
         for next_node, weight in graph[current_node].items():
             new_cost = current_cost + weight
