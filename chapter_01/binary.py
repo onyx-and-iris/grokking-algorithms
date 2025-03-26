@@ -34,7 +34,6 @@ SAMPLE_SIZE = 1000
 numbers = random.sample(range(LOWER, UPPER), SAMPLE_SIZE)
 numbers.extend([9000, 999999])
 numbers.sort()
-print(numbers)
 
 search = BinarySearch(numbers)
 print(search.search(42))
