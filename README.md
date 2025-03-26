@@ -40,13 +40,13 @@
 
 [chapter12][knn]
 
-[binary]: ./chapter1/
-[selection_sort]: ./chapter2/
-[recursion]: ./chapter3/
-[quick_sort]: ./chapter4/
-[bfs]: ./chapter6/
-[trees]: ./chapter7/
-[dijkstra]: ./chapter9/
-[greedy]: ./chapter10/
-[dynamic]: ./chapter11/
-[knn]: ./chapter12/
+[binary]: ./chapter_01/
+[selection_sort]: ./chapter_02/
+[recursion]: ./chapter_03/
+[quick_sort]: ./chapter_04/
+[bfs]: ./chapter_06/
+[trees]: ./chapter_07/
+[dijkstra]: ./chapter_09/
+[greedy]: ./chapter_10/
+[dynamic]: ./chapter_11/
+[knn]: ./chapter_12/
